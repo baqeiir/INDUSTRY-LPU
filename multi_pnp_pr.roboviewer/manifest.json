@@ -1,0 +1,2649 @@
+{
+  "version": 4,
+  "exportedAt": "2026-11-19T16:59:55.125Z",
+  "session": {
+    "projectId": "untitled-project-9nfydv",
+    "formatVersion": 4,
+    "fileName": "multi_pnp_pr.roboviewer"
+  },
+  "theme": "fjord-classic",
+  "scene": {
+    "version": 2,
+    "nodes": {
+      "conveyor-GRIvejhgS7": {
+        "id": "conveyor-GRIvejhgS7",
+        "name": "Belt Conveyor",
+        "type": "Conveyor",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "parentId": "warehouse-jBgnPwqeQm",
+        "children": [
+          "object-NUfr5yeDme"
+        ],
+        "conveyor": {
+          "running": false,
+          "speed": 0.39999999999999997,
+          "direction": 1,
+          "size": [
+            5,
+            0.3,
+            0.6
+          ],
+          "loop": true,
+          "beltAxis": "x",
+          "centerOffset": [
+            0,
+            0,
+            0
+          ],
+          "surfaceY": 0.3,
+          "targetDistanceMm": 0,
+          "targetSpeedMmPerSec": 350,
+          "travelledDistanceMm": 0,
+          "targetTravelActive": false,
+          "stops": [
+            {
+              "id": "stop-1794992704580-qztx0",
+              "name": "stp_point",
+              "offsetMm": 190.00754647831957
+            }
+          ],
+          "autoSpawn": {
+            "enabled": true,
+            "intervalSeconds": 2,
+            "resumeOnPickup": false,
+            "maxPayloadCount": 2,
+            "templates": [
+              {
+                "id": "spawn-1794993880322-pivno",
+                "name": "Box",
+                "type": "Object",
+                "visible": true,
+                "position": [
+                  -2.064134451288199,
+                  0.425,
+                  0
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "parametricBox": {
+                  "length": 0.4,
+                  "width": 0.3,
+                  "height": 0.25,
+                  "color": "#4db4f2"
+                },
+                "stopId": "stop-1794992704580-qztx0"
+              }
+            ],
+            "spawnMode": "batch",
+            "perPayloadTiming": false,
+            "colorSequence": []
+          },
+          "variant": "belt"
+        },
+        "ridesConveyor": false
+      },
+      "warehouse-jBgnPwqeQm": {
+        "id": "warehouse-jBgnPwqeQm",
+        "name": "Warehouse",
+        "type": "Warehouse",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "parentId": null,
+        "children": [
+          "conveyor-GRIvejhgS7",
+          "pedestal-5k4kEhxVYv",
+          "pallet-fyMXXkxwIi",
+          "rack-kPh6eb60jE"
+        ],
+        "ridesConveyor": false,
+        "warehouse": {
+          "length": 30,
+          "width": 20,
+          "height": 8,
+          "wallThickness": 0.2,
+          "doorWidth": 5,
+          "doorHeight": 4.5,
+          "color": "#617080",
+          "roofColor": "#39424d",
+          "floorColor": "#70777b"
+        }
+      },
+      "robot-Okb3KfUgja": {
+        "id": "robot-Okb3KfUgja",
+        "name": "UR10e",
+        "type": "Robot",
+        "position": [
+          0,
+          0.3026007898412327,
+          0
+        ],
+        "rotation": [
+          2.647253755714823e-19,
+          -1.5704789855216799,
+          0
+        ],
+        "visible": true,
+        "parentId": "pedestal-5k4kEhxVYv",
+        "children": [
+          "gripper-6JRG1SgqkD"
+        ],
+        "urdfPath": "ur_description/urdf/ur10e.urdf",
+        "ridesConveyor": false
+      },
+      "pedestal-5k4kEhxVYv": {
+        "id": "pedestal-5k4kEhxVYv",
+        "name": "Pedestal",
+        "type": "Pedestal",
+        "position": [
+          0,
+          0.3,
+          -0.7786213519562281
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "parentId": "warehouse-jBgnPwqeQm",
+        "children": [
+          "robot-Okb3KfUgja"
+        ],
+        "ridesConveyor": false,
+        "pedestal": {
+          "width": 0.4,
+          "depth": 0.4,
+          "height": 0.6,
+          "color": "#6b7280"
+        }
+      },
+      "gripper-6JRG1SgqkD": {
+        "id": "gripper-6JRG1SgqkD",
+        "name": "Vacuum Gripper",
+        "type": "Tool",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "parentId": "robot-Okb3KfUgja",
+        "children": [],
+        "attachment": {
+          "kind": "robot-link",
+          "robotNodeId": "robot-Okb3KfUgja",
+          "linkName": "flange",
+          "offsetPosition": [
+            -0.011912498336672073,
+            0,
+            0.00011130492230702893
+          ],
+          "offsetRotation": [
+            -3.141592653589793,
+            1.5614530572059122,
+            -3.141592653589793
+          ]
+        },
+        "ridesConveyor": false,
+        "gripper": {
+          "kind": "vacuum",
+          "color": "#2b2f33",
+          "span": 0.09
+        }
+      },
+      "pallet-fyMXXkxwIi": {
+        "id": "pallet-fyMXXkxwIi",
+        "name": "Pallet",
+        "type": "Pallet",
+        "position": [
+          1.15,
+          0.072,
+          -1
+        ],
+        "rotation": [
+          -3.141592653589793,
+          1.568285282839832,
+          -3.141592653589793
+        ],
+        "visible": true,
+        "parentId": "warehouse-jBgnPwqeQm",
+        "children": [],
+        "ridesConveyor": false,
+        "factoryObject": {
+          "dimensions": {
+            "length": 1.2,
+            "width": 1.5,
+            "height": 0.144
+          },
+          "color": "#b5803a"
+        }
+      },
+      "pedestal-K1pjGjiV5r": {
+        "id": "pedestal-K1pjGjiV5r",
+        "name": "Pedestal_1",
+        "type": "Pedestal",
+        "position": [
+          0.6102207503689634,
+          0.3,
+          -2.1989594434149646
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "parentId": null,
+        "children": [
+          "robot-wrcv48V0JE"
+        ],
+        "ridesConveyor": false,
+        "pedestal": {
+          "width": 0.4,
+          "depth": 0.4,
+          "height": 0.6,
+          "color": "#6b7280"
+        }
+      },
+      "robot-wrcv48V0JE": {
+        "id": "robot-wrcv48V0JE",
+        "name": "UR10e_1",
+        "type": "Robot",
+        "position": [
+          0,
+          0.3026007898412327,
+          0
+        ],
+        "rotation": [
+          2.647253755714823e-19,
+          -1.5704789855216799,
+          0
+        ],
+        "visible": true,
+        "parentId": "pedestal-K1pjGjiV5r",
+        "children": [
+          "tool-h1UrZ3Ez3N"
+        ],
+        "urdfPath": "ur_description/urdf/ur10e.urdf",
+        "ridesConveyor": false
+      },
+      "tool-h1UrZ3Ez3N": {
+        "id": "tool-h1UrZ3Ez3N",
+        "name": "Vacuum Gripper_1",
+        "type": "Tool",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "parentId": "robot-wrcv48V0JE",
+        "children": [],
+        "attachment": {
+          "kind": "robot-link",
+          "robotNodeId": "robot-wrcv48V0JE",
+          "linkName": "flange",
+          "offsetPosition": [
+            -0.011912498336672073,
+            0,
+            0.00011130492230702893
+          ],
+          "offsetRotation": [
+            -3.141592653589793,
+            1.5614530572059122,
+            -3.141592653589793
+          ]
+        },
+        "ridesConveyor": false,
+        "gripper": {
+          "kind": "vacuum",
+          "color": "#2b2f33",
+          "span": 0.09
+        }
+      },
+      "rack-kPh6eb60jE": {
+        "id": "rack-kPh6eb60jE",
+        "name": "Rack",
+        "type": "Rack",
+        "position": [
+          1.4203677994017454,
+          1.25,
+          -3.156684206495683
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "parentId": "warehouse-jBgnPwqeQm",
+        "children": [],
+        "ridesConveyor": false,
+        "factoryObject": {
+          "dimensions": {
+            "width": 1.8,
+            "depth": 0.9,
+            "height": 2.5,
+            "levels": 3
+          },
+          "color": "#3f6fb0"
+        }
+      },
+      "object-NUfr5yeDme": {
+        "id": "object-NUfr5yeDme",
+        "name": "Box",
+        "type": "Object",
+        "position": [
+          -2.064134451288199,
+          0.425,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "parentId": "conveyor-GRIvejhgS7",
+        "children": [],
+        "ridesConveyor": true,
+        "parametricBox": {
+          "length": 0.4,
+          "width": 0.3,
+          "height": 0.25,
+          "color": "#4db4f2"
+        }
+      }
+    },
+    "rootNodeIds": [
+      "warehouse-jBgnPwqeQm",
+      "pedestal-K1pjGjiV5r"
+    ],
+    "selectedNodeId": "warehouse-jBgnPwqeQm",
+    "selectedNodeIds": [
+      "warehouse-jBgnPwqeQm"
+    ],
+    "collapsedNodeIds": [],
+    "robotJointStates": {
+      "robot-Okb3KfUgja": {
+        "jointNames": [
+          "shoulder_pan_joint",
+          "shoulder_lift_joint",
+          "elbow_joint",
+          "wrist_1_joint",
+          "wrist_2_joint",
+          "wrist_3_joint"
+        ],
+        "jointAngles": [
+          0.000031600842136381146,
+          -1.5739856894870203,
+          1.5738108673935125,
+          -1.5707162735212121,
+          -1.5713507888424632,
+          -0.000029513615582787978
+        ]
+      },
+      "robot-wrcv48V0JE": {
+        "jointNames": [
+          "shoulder_pan_joint",
+          "shoulder_lift_joint",
+          "elbow_joint",
+          "wrist_1_joint",
+          "wrist_2_joint",
+          "wrist_3_joint"
+        ],
+        "jointAngles": [
+          -4.982332336873896e-7,
+          -1.5708053695749487,
+          1.5708130124274968,
+          -1.5708096464684949,
+          -1.5707960069036428,
+          -5.156095206522437e-7
+        ]
+      }
+    },
+    "robotWorkspaceVisibility": {},
+    "currentWaypoint": null,
+    "waypointHistory": [],
+    "teachTargets": [],
+    "selectedTeachTargetId": null
+  },
+  "graph": {
+    "version": 4,
+    "nodes": [
+      {
+        "type": "moveToPose",
+        "id": "Move To Pose-peiaku480",
+        "data": {
+          "pose_name": "home_pose",
+          "robot_name": "UR10e",
+          "user_frame_number": 0,
+          "toolVelocity": 60,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 920
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPose",
+        "id": "Move To Pose-ra6aecwz0",
+        "data": {
+          "pose_name": "pick_box",
+          "robot_name": "UR10e",
+          "user_frame_number": 0,
+          "toolVelocity": 60,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 1120
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPose",
+        "id": "Move To Pose-1882orkxj",
+        "data": {
+          "pose_name": "pallet_place",
+          "robot_name": "UR10e",
+          "user_frame_number": 0,
+          "toolVelocity": 60,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 1720
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "conveyorControl",
+        "id": "Conveyor Control-xqp5xrvtt",
+        "data": {
+          "conveyor_name": "Belt Conveyor",
+          "action": "start",
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 520
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "controlGripper",
+        "id": "Control Gripper-zzdp6du3k",
+        "data": {
+          "type": "vacuum",
+          "state": true,
+          "object_name": "__current_workpiece__",
+          "gripper_name": "Vacuum Gripper",
+          "link_name": "tcp",
+          "release_parent_name": "Pallet",
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 1320
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveTranslate",
+        "id": "Move Translate-a8sd0ux37",
+        "data": {
+          "dx": 0,
+          "dy": 0,
+          "dz": 0.5,
+          "robot_name": "UR10e",
+          "user_frame_number": 0,
+          "tool_number": 0,
+          "toolVelocity": 63,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 1520
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false
+      },
+      {
+        "type": "controlGripper",
+        "id": "Control Gripper-bkbibolhp",
+        "data": {
+          "type": "vacuum",
+          "state": false,
+          "object_name": "__current_workpiece__",
+          "gripper_name": "Vacuum Gripper",
+          "link_name": "tcp",
+          "release_parent_name": "Pallet",
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 2120
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPose",
+        "id": "Move To Pose-73mwyhv2v",
+        "data": {
+          "pose_name": "home_pose",
+          "robot_name": "UR10e",
+          "user_frame_number": 0,
+          "toolVelocity": 60,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 2520
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "conveyorMoveToSavedStop",
+        "id": "Conveyor Move To Saved Stop-81pc69h1c",
+        "data": {
+          "conveyor_id": "conveyor-GRIvejhgS7",
+          "conveyor_name": "Belt Conveyor",
+          "stop_name": "stp_point",
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 720
+        },
+        "measured": {
+          "width": 82,
+          "height": 124
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPatternPose",
+        "id": "Move To Pose with Offset-dxh6n0882",
+        "data": {
+          "pose_name": "pallet_place",
+          "robot_name": "UR10e",
+          "start_index": 0,
+          "step_x_mm": "370",
+          "step_y_mm": "0",
+          "step_z_mm": "0",
+          "toolVelocity": 60,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 1920
+        },
+        "measured": {
+          "width": 82,
+          "height": 124
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "for",
+        "id": "For-dxd056r0v",
+        "data": {
+          "__uiCollapsed": true,
+          "range": "2"
+        },
+        "position": {
+          "x": 79,
+          "y": 320
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "stopLoop",
+        "id": "Stop Loop-kh6mio109",
+        "data": {
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 2720
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "conveyorReset",
+        "id": "Conveyor Reset-pj2gyh1ht",
+        "data": {
+          "conveyor_name": "Belt Conveyor",
+          "rerun": false,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 2920
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false
+      },
+      {
+        "type": "program",
+        "id": "Program-uagdjw8nt",
+        "data": {
+          "programName": "PNP1",
+          "sharedVariables": {
+            "robot_name": "UR10e",
+            "toolVelocity": 60,
+            "toolAcceleration": 30
+          },
+          "__uiCollapsed": false,
+          "__uiSharedVariablesOpen": false
+        },
+        "position": {
+          "x": 3,
+          "y": 120
+        },
+        "measured": {
+          "width": 234,
+          "height": 39
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "program",
+        "id": "Program-iyicku6ny",
+        "data": {
+          "programName": "PNP2",
+          "sharedVariables": {
+            "robot_name": "UR10e_1",
+            "toolVelocity": 40,
+            "toolAcceleration": 30
+          },
+          "__uiCollapsed": false,
+          "__uiSharedVariablesOpen": false
+        },
+        "position": {
+          "x": 363,
+          "y": 120
+        },
+        "measured": {
+          "width": 234,
+          "height": 39
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPose",
+        "id": "Move To Pose-9kuf0guha",
+        "data": {
+          "pose_name": "home_2",
+          "robot_name": "UR10e_1",
+          "user_frame_number": 0,
+          "toolVelocity": 30,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 720
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "for",
+        "id": "For-g7eun9nie",
+        "data": {
+          "__uiCollapsed": true,
+          "range": "2"
+        },
+        "position": {
+          "x": 439,
+          "y": 320
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPose",
+        "id": "Move To Pose-4u4uag6hw",
+        "data": {
+          "pose_name": "rack_place",
+          "robot_name": "UR10e_1",
+          "user_frame_number": 0,
+          "toolVelocity": 30,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 1720
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPose",
+        "id": "Move To Pose-5oph3f8aw",
+        "data": {
+          "pose_name": "pick_from_pallet3",
+          "robot_name": "UR10e_1",
+          "user_frame_number": 0,
+          "toolVelocity": 30,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 920
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "controlGripper",
+        "id": "Control Gripper-5xqld6kj5",
+        "data": {
+          "type": "vacuum",
+          "state": true,
+          "object_name": "__current_workpiece__",
+          "gripper_name": "Vacuum Gripper_1",
+          "link_name": "tcp",
+          "release_parent_name": "Rack",
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 1320
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveTranslate",
+        "id": "Move Translate-gd821xw1p",
+        "data": {
+          "dx": 0,
+          "dy": 0,
+          "dz": 0.72,
+          "robot_name": "UR10e_1",
+          "user_frame_number": 0,
+          "tool_number": 0,
+          "toolVelocity": 30,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 1520
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "stopLoop",
+        "id": "Stop Loop-wlm3mukpl",
+        "data": {
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 2720
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "controlGripper",
+        "id": "Control Gripper-aas9e9dge",
+        "data": {
+          "type": "vacuum",
+          "state": false,
+          "object_name": "__held_workpiece__",
+          "gripper_name": "Vacuum Gripper_1",
+          "link_name": "tcp",
+          "release_parent_name": "Rack",
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 2320
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "setVariable",
+        "id": "Set Variable-zdyhc8qh9",
+        "data": {
+          "name": "1",
+          "value": true,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 79,
+          "y": 2320
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "waitFor",
+        "id": "Wait For-xor53rxmm",
+        "data": {
+          "flags": [
+            "1"
+          ],
+          "timeout_ms": 0,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 520
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPatternPose",
+        "id": "Move To Pose with Offset-wpktldy0e",
+        "data": {
+          "pose_name": "pick_from_pallet2",
+          "robot_name": "",
+          "start_index": 0,
+          "step_x_mm": "370",
+          "step_y_mm": "0",
+          "step_z_mm": "0",
+          "toolVelocity": 30,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 1120
+        },
+        "measured": {
+          "width": 82,
+          "height": 124
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveToPatternPose",
+        "id": "Move To Pose with Offset-ktdyd1y2s",
+        "data": {
+          "pose_name": "rack_place",
+          "robot_name": "",
+          "start_index": 0,
+          "step_x_mm": "0",
+          "step_y_mm": "420",
+          "step_z_mm": "0",
+          "toolVelocity": 30,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 1920
+        },
+        "measured": {
+          "width": 82,
+          "height": 124
+        },
+        "hidden": false,
+        "selected": false
+      },
+      {
+        "type": "moveToPose",
+        "id": "Move To Pose-pdb5vfijb",
+        "data": {
+          "pose_name": "home_2",
+          "robot_name": "UR10e_1",
+          "user_frame_number": 0,
+          "toolVelocity": 30,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 2520
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "type": "moveTranslate",
+        "id": "Move Translate-b8jcpiq2r",
+        "data": {
+          "dx": 0,
+          "dy": 0,
+          "dz": -0.26,
+          "robot_name": "UR10e_1",
+          "user_frame_number": 0,
+          "tool_number": 0,
+          "toolVelocity": 30,
+          "toolAcceleration": 30,
+          "__uiCollapsed": true
+        },
+        "position": {
+          "x": 439,
+          "y": 2120
+        },
+        "measured": {
+          "width": 82,
+          "height": 108
+        },
+        "hidden": false,
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose with Offset-wpktldy0e",
+        "sourceHandle": "move-to-pattern-pose-out",
+        "target": "Control Gripper-5xqld6kj5",
+        "targetHandle": "control-gripper-in",
+        "id": "2soItz",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move Translate-b8jcpiq2r",
+        "sourceHandle": "move-translate-out",
+        "target": "Control Gripper-aas9e9dge",
+        "targetHandle": "control-gripper-in",
+        "id": "zrtmxp",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose with Offset-ktdyd1y2s",
+        "sourceHandle": "move-to-pattern-pose-out",
+        "target": "Move Translate-b8jcpiq2r",
+        "targetHandle": "move-translate-in",
+        "id": "mtY0c3",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose-pdb5vfijb",
+        "sourceHandle": "move-to-pose-out",
+        "target": "Stop Loop-wlm3mukpl",
+        "targetHandle": "input",
+        "id": "_8IXOT",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Control Gripper-aas9e9dge",
+        "sourceHandle": "control-gripper-out",
+        "target": "Move To Pose-pdb5vfijb",
+        "targetHandle": "move-to-pose-flow-in",
+        "id": "gd2KXO",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose-5oph3f8aw",
+        "sourceHandle": "move-to-pose-out",
+        "target": "Move To Pose with Offset-wpktldy0e",
+        "targetHandle": "move-to-pattern-pose-flow-in",
+        "id": "svtliy",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose with Offset-dxh6n0882",
+        "sourceHandle": "move-to-pattern-pose-out",
+        "target": "Control Gripper-bkbibolhp",
+        "targetHandle": "control-gripper-in",
+        "id": "ot4oEo",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose-1882orkxj",
+        "sourceHandle": "move-to-pose-out",
+        "target": "Move To Pose with Offset-dxh6n0882",
+        "targetHandle": "move-to-pattern-pose-flow-in",
+        "id": "I4_1bl",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose-4u4uag6hw",
+        "sourceHandle": "move-to-pose-out",
+        "target": "Move To Pose with Offset-ktdyd1y2s",
+        "targetHandle": "move-to-pattern-pose-flow-in",
+        "id": "DfLYeZ",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Wait For-xor53rxmm",
+        "sourceHandle": "wait-for-out",
+        "target": "Move To Pose-9kuf0guha",
+        "targetHandle": "move-to-pose-flow-in",
+        "id": "gwfu6d",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "For-g7eun9nie",
+        "sourceHandle": "loop",
+        "target": "Wait For-xor53rxmm",
+        "targetHandle": "wait-for-in",
+        "id": "AQK8A0",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Program-iyicku6ny",
+        "sourceHandle": "program-out",
+        "target": "For-g7eun9nie",
+        "targetHandle": "input",
+        "id": "GdYDBh",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Set Variable-zdyhc8qh9",
+        "sourceHandle": "set-variable-out",
+        "target": "Move To Pose-73mwyhv2v",
+        "targetHandle": "move-to-pose-flow-in",
+        "id": "mydZQM",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Control Gripper-bkbibolhp",
+        "sourceHandle": "control-gripper-out",
+        "target": "Set Variable-zdyhc8qh9",
+        "targetHandle": "set-variable-in",
+        "id": "Vstkce",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move Translate-gd821xw1p",
+        "sourceHandle": "move-translate-out",
+        "target": "Move To Pose-4u4uag6hw",
+        "targetHandle": "move-to-pose-flow-in",
+        "id": "Smwr5Z",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Control Gripper-5xqld6kj5",
+        "sourceHandle": "control-gripper-out",
+        "target": "Move Translate-gd821xw1p",
+        "targetHandle": "move-translate-in",
+        "id": "2cUuOt",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose-9kuf0guha",
+        "sourceHandle": "move-to-pose-out",
+        "target": "Move To Pose-5oph3f8aw",
+        "targetHandle": "move-to-pose-flow-in",
+        "id": "Xqxno7",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Program-uagdjw8nt",
+        "sourceHandle": "program-out",
+        "target": "For-dxd056r0v",
+        "targetHandle": "input",
+        "id": "8YZej4",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Stop Loop-kh6mio109",
+        "sourceHandle": "out",
+        "target": "Conveyor Reset-pj2gyh1ht",
+        "targetHandle": "conveyor-reset-in",
+        "id": "QCXQxn",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose-73mwyhv2v",
+        "sourceHandle": "move-to-pose-out",
+        "target": "Stop Loop-kh6mio109",
+        "targetHandle": "input",
+        "id": "BKP67n",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "For-dxd056r0v",
+        "sourceHandle": "loop",
+        "target": "Conveyor Control-xqp5xrvtt",
+        "targetHandle": "conveyor-ctrl-in",
+        "id": "pfIvhi",
+        "hidden": false,
+        "selected": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Conveyor Move To Saved Stop-81pc69h1c",
+        "sourceHandle": "conveyor-stop-out",
+        "target": "Move To Pose-peiaku480",
+        "targetHandle": "move-to-pose-flow-in",
+        "id": "4fT7s7",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Conveyor Control-xqp5xrvtt",
+        "sourceHandle": "conveyor-ctrl-out",
+        "target": "Conveyor Move To Saved Stop-81pc69h1c",
+        "targetHandle": "conveyor-stop-in",
+        "id": "6M7VIz",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move Translate-a8sd0ux37",
+        "sourceHandle": "move-translate-out",
+        "target": "Move To Pose-1882orkxj",
+        "targetHandle": "move-to-pose-flow-in",
+        "id": "lHqlYr",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Control Gripper-zzdp6du3k",
+        "sourceHandle": "control-gripper-out",
+        "target": "Move Translate-a8sd0ux37",
+        "targetHandle": "move-translate-in",
+        "id": "-qnP12",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose-ra6aecwz0",
+        "sourceHandle": "move-to-pose-out",
+        "target": "Control Gripper-zzdp6du3k",
+        "targetHandle": "control-gripper-in",
+        "id": "y2rqe2",
+        "hidden": false
+      },
+      {
+        "type": "default",
+        "animated": false,
+        "style": {
+          "strokeWidth": 3,
+          "stroke": "#4b5563"
+        },
+        "source": "Move To Pose-peiaku480",
+        "sourceHandle": "move-to-pose-out",
+        "target": "Move To Pose-ra6aecwz0",
+        "targetHandle": "move-to-pose-flow-in",
+        "id": "2bi-VC",
+        "hidden": false
+      }
+    ],
+    "programName": "PNP",
+    "viewport": {
+      "x": -15.5,
+      "y": -537,
+      "zoom": 0.5
+    }
+  },
+  "programs": {
+    "activeId": "program-1",
+    "programs": [
+      {
+        "id": "program-1",
+        "snapshot": {
+          "version": 4,
+          "nodes": [
+            {
+              "type": "moveToPose",
+              "id": "Move To Pose-peiaku480",
+              "data": {
+                "pose_name": "home_pose",
+                "robot_name": "UR10e",
+                "user_frame_number": 0,
+                "toolVelocity": 60,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 920
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPose",
+              "id": "Move To Pose-ra6aecwz0",
+              "data": {
+                "pose_name": "pick_box",
+                "robot_name": "UR10e",
+                "user_frame_number": 0,
+                "toolVelocity": 60,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 1120
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPose",
+              "id": "Move To Pose-1882orkxj",
+              "data": {
+                "pose_name": "pallet_place",
+                "robot_name": "UR10e",
+                "user_frame_number": 0,
+                "toolVelocity": 60,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 1720
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "conveyorControl",
+              "id": "Conveyor Control-xqp5xrvtt",
+              "data": {
+                "conveyor_name": "Belt Conveyor",
+                "action": "start",
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 520
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "controlGripper",
+              "id": "Control Gripper-zzdp6du3k",
+              "data": {
+                "type": "vacuum",
+                "state": true,
+                "object_name": "__current_workpiece__",
+                "gripper_name": "Vacuum Gripper",
+                "link_name": "tcp",
+                "release_parent_name": "Pallet",
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 1320
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveTranslate",
+              "id": "Move Translate-a8sd0ux37",
+              "data": {
+                "dx": 0,
+                "dy": 0,
+                "dz": 0.5,
+                "robot_name": "UR10e",
+                "user_frame_number": 0,
+                "tool_number": 0,
+                "toolVelocity": 63,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 1520
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false
+            },
+            {
+              "type": "controlGripper",
+              "id": "Control Gripper-bkbibolhp",
+              "data": {
+                "type": "vacuum",
+                "state": false,
+                "object_name": "__current_workpiece__",
+                "gripper_name": "Vacuum Gripper",
+                "link_name": "tcp",
+                "release_parent_name": "Pallet",
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 2120
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPose",
+              "id": "Move To Pose-73mwyhv2v",
+              "data": {
+                "pose_name": "home_pose",
+                "robot_name": "UR10e",
+                "user_frame_number": 0,
+                "toolVelocity": 60,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 2520
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "conveyorMoveToSavedStop",
+              "id": "Conveyor Move To Saved Stop-81pc69h1c",
+              "data": {
+                "conveyor_id": "conveyor-GRIvejhgS7",
+                "conveyor_name": "Belt Conveyor",
+                "stop_name": "stp_point",
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 720
+              },
+              "measured": {
+                "width": 82,
+                "height": 124
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPatternPose",
+              "id": "Move To Pose with Offset-dxh6n0882",
+              "data": {
+                "pose_name": "pallet_place",
+                "robot_name": "UR10e",
+                "start_index": 0,
+                "step_x_mm": "370",
+                "step_y_mm": "0",
+                "step_z_mm": "0",
+                "toolVelocity": 60,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 1920
+              },
+              "measured": {
+                "width": 82,
+                "height": 124
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "for",
+              "id": "For-dxd056r0v",
+              "data": {
+                "__uiCollapsed": true,
+                "range": "2"
+              },
+              "position": {
+                "x": 79,
+                "y": 320
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "stopLoop",
+              "id": "Stop Loop-kh6mio109",
+              "data": {
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 2720
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "conveyorReset",
+              "id": "Conveyor Reset-pj2gyh1ht",
+              "data": {
+                "conveyor_name": "Belt Conveyor",
+                "rerun": false,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 2920
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false
+            },
+            {
+              "type": "program",
+              "id": "Program-uagdjw8nt",
+              "data": {
+                "programName": "PNP1",
+                "sharedVariables": {
+                  "robot_name": "UR10e",
+                  "toolVelocity": 60,
+                  "toolAcceleration": 30
+                },
+                "__uiCollapsed": false,
+                "__uiSharedVariablesOpen": false
+              },
+              "position": {
+                "x": 3,
+                "y": 120
+              },
+              "measured": {
+                "width": 234,
+                "height": 39
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "program",
+              "id": "Program-iyicku6ny",
+              "data": {
+                "programName": "PNP2",
+                "sharedVariables": {
+                  "robot_name": "UR10e_1",
+                  "toolVelocity": 40,
+                  "toolAcceleration": 30
+                },
+                "__uiCollapsed": false,
+                "__uiSharedVariablesOpen": false
+              },
+              "position": {
+                "x": 363,
+                "y": 120
+              },
+              "measured": {
+                "width": 234,
+                "height": 39
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPose",
+              "id": "Move To Pose-9kuf0guha",
+              "data": {
+                "pose_name": "home_2",
+                "robot_name": "UR10e_1",
+                "user_frame_number": 0,
+                "toolVelocity": 30,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 720
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "for",
+              "id": "For-g7eun9nie",
+              "data": {
+                "__uiCollapsed": true,
+                "range": "2"
+              },
+              "position": {
+                "x": 439,
+                "y": 320
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPose",
+              "id": "Move To Pose-4u4uag6hw",
+              "data": {
+                "pose_name": "rack_place",
+                "robot_name": "UR10e_1",
+                "user_frame_number": 0,
+                "toolVelocity": 30,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 1720
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPose",
+              "id": "Move To Pose-5oph3f8aw",
+              "data": {
+                "pose_name": "pick_from_pallet3",
+                "robot_name": "UR10e_1",
+                "user_frame_number": 0,
+                "toolVelocity": 30,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 920
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "controlGripper",
+              "id": "Control Gripper-5xqld6kj5",
+              "data": {
+                "type": "vacuum",
+                "state": true,
+                "object_name": "__current_workpiece__",
+                "gripper_name": "Vacuum Gripper_1",
+                "link_name": "tcp",
+                "release_parent_name": "Rack",
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 1320
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveTranslate",
+              "id": "Move Translate-gd821xw1p",
+              "data": {
+                "dx": 0,
+                "dy": 0,
+                "dz": 0.72,
+                "robot_name": "UR10e_1",
+                "user_frame_number": 0,
+                "tool_number": 0,
+                "toolVelocity": 30,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 1520
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "stopLoop",
+              "id": "Stop Loop-wlm3mukpl",
+              "data": {
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 2720
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "controlGripper",
+              "id": "Control Gripper-aas9e9dge",
+              "data": {
+                "type": "vacuum",
+                "state": false,
+                "object_name": "__held_workpiece__",
+                "gripper_name": "Vacuum Gripper_1",
+                "link_name": "tcp",
+                "release_parent_name": "Rack",
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 2320
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "setVariable",
+              "id": "Set Variable-zdyhc8qh9",
+              "data": {
+                "name": "1",
+                "value": true,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 79,
+                "y": 2320
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "waitFor",
+              "id": "Wait For-xor53rxmm",
+              "data": {
+                "flags": [
+                  "1"
+                ],
+                "timeout_ms": 0,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 520
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPatternPose",
+              "id": "Move To Pose with Offset-wpktldy0e",
+              "data": {
+                "pose_name": "pick_from_pallet2",
+                "robot_name": "",
+                "start_index": 0,
+                "step_x_mm": "370",
+                "step_y_mm": "0",
+                "step_z_mm": "0",
+                "toolVelocity": 30,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 1120
+              },
+              "measured": {
+                "width": 82,
+                "height": 124
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveToPatternPose",
+              "id": "Move To Pose with Offset-ktdyd1y2s",
+              "data": {
+                "pose_name": "rack_place",
+                "robot_name": "",
+                "start_index": 0,
+                "step_x_mm": "0",
+                "step_y_mm": "420",
+                "step_z_mm": "0",
+                "toolVelocity": 30,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 1920
+              },
+              "measured": {
+                "width": 82,
+                "height": 124
+              },
+              "hidden": false,
+              "selected": false
+            },
+            {
+              "type": "moveToPose",
+              "id": "Move To Pose-pdb5vfijb",
+              "data": {
+                "pose_name": "home_2",
+                "robot_name": "UR10e_1",
+                "user_frame_number": 0,
+                "toolVelocity": 30,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 2520
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            },
+            {
+              "type": "moveTranslate",
+              "id": "Move Translate-b8jcpiq2r",
+              "data": {
+                "dx": 0,
+                "dy": 0,
+                "dz": -0.26,
+                "robot_name": "UR10e_1",
+                "user_frame_number": 0,
+                "tool_number": 0,
+                "toolVelocity": 30,
+                "toolAcceleration": 30,
+                "__uiCollapsed": true
+              },
+              "position": {
+                "x": 439,
+                "y": 2120
+              },
+              "measured": {
+                "width": 82,
+                "height": 108
+              },
+              "hidden": false,
+              "selected": false,
+              "dragging": false
+            }
+          ],
+          "edges": [
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose with Offset-wpktldy0e",
+              "sourceHandle": "move-to-pattern-pose-out",
+              "target": "Control Gripper-5xqld6kj5",
+              "targetHandle": "control-gripper-in",
+              "id": "2soItz",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move Translate-b8jcpiq2r",
+              "sourceHandle": "move-translate-out",
+              "target": "Control Gripper-aas9e9dge",
+              "targetHandle": "control-gripper-in",
+              "id": "zrtmxp",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose with Offset-ktdyd1y2s",
+              "sourceHandle": "move-to-pattern-pose-out",
+              "target": "Move Translate-b8jcpiq2r",
+              "targetHandle": "move-translate-in",
+              "id": "mtY0c3",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose-pdb5vfijb",
+              "sourceHandle": "move-to-pose-out",
+              "target": "Stop Loop-wlm3mukpl",
+              "targetHandle": "input",
+              "id": "_8IXOT",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Control Gripper-aas9e9dge",
+              "sourceHandle": "control-gripper-out",
+              "target": "Move To Pose-pdb5vfijb",
+              "targetHandle": "move-to-pose-flow-in",
+              "id": "gd2KXO",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose-5oph3f8aw",
+              "sourceHandle": "move-to-pose-out",
+              "target": "Move To Pose with Offset-wpktldy0e",
+              "targetHandle": "move-to-pattern-pose-flow-in",
+              "id": "svtliy",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose with Offset-dxh6n0882",
+              "sourceHandle": "move-to-pattern-pose-out",
+              "target": "Control Gripper-bkbibolhp",
+              "targetHandle": "control-gripper-in",
+              "id": "ot4oEo",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose-1882orkxj",
+              "sourceHandle": "move-to-pose-out",
+              "target": "Move To Pose with Offset-dxh6n0882",
+              "targetHandle": "move-to-pattern-pose-flow-in",
+              "id": "I4_1bl",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose-4u4uag6hw",
+              "sourceHandle": "move-to-pose-out",
+              "target": "Move To Pose with Offset-ktdyd1y2s",
+              "targetHandle": "move-to-pattern-pose-flow-in",
+              "id": "DfLYeZ",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Wait For-xor53rxmm",
+              "sourceHandle": "wait-for-out",
+              "target": "Move To Pose-9kuf0guha",
+              "targetHandle": "move-to-pose-flow-in",
+              "id": "gwfu6d",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "For-g7eun9nie",
+              "sourceHandle": "loop",
+              "target": "Wait For-xor53rxmm",
+              "targetHandle": "wait-for-in",
+              "id": "AQK8A0",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Program-iyicku6ny",
+              "sourceHandle": "program-out",
+              "target": "For-g7eun9nie",
+              "targetHandle": "input",
+              "id": "GdYDBh",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Set Variable-zdyhc8qh9",
+              "sourceHandle": "set-variable-out",
+              "target": "Move To Pose-73mwyhv2v",
+              "targetHandle": "move-to-pose-flow-in",
+              "id": "mydZQM",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Control Gripper-bkbibolhp",
+              "sourceHandle": "control-gripper-out",
+              "target": "Set Variable-zdyhc8qh9",
+              "targetHandle": "set-variable-in",
+              "id": "Vstkce",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move Translate-gd821xw1p",
+              "sourceHandle": "move-translate-out",
+              "target": "Move To Pose-4u4uag6hw",
+              "targetHandle": "move-to-pose-flow-in",
+              "id": "Smwr5Z",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Control Gripper-5xqld6kj5",
+              "sourceHandle": "control-gripper-out",
+              "target": "Move Translate-gd821xw1p",
+              "targetHandle": "move-translate-in",
+              "id": "2cUuOt",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose-9kuf0guha",
+              "sourceHandle": "move-to-pose-out",
+              "target": "Move To Pose-5oph3f8aw",
+              "targetHandle": "move-to-pose-flow-in",
+              "id": "Xqxno7",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Program-uagdjw8nt",
+              "sourceHandle": "program-out",
+              "target": "For-dxd056r0v",
+              "targetHandle": "input",
+              "id": "8YZej4",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Stop Loop-kh6mio109",
+              "sourceHandle": "out",
+              "target": "Conveyor Reset-pj2gyh1ht",
+              "targetHandle": "conveyor-reset-in",
+              "id": "QCXQxn",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose-73mwyhv2v",
+              "sourceHandle": "move-to-pose-out",
+              "target": "Stop Loop-kh6mio109",
+              "targetHandle": "input",
+              "id": "BKP67n",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "For-dxd056r0v",
+              "sourceHandle": "loop",
+              "target": "Conveyor Control-xqp5xrvtt",
+              "targetHandle": "conveyor-ctrl-in",
+              "id": "pfIvhi",
+              "hidden": false,
+              "selected": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Conveyor Move To Saved Stop-81pc69h1c",
+              "sourceHandle": "conveyor-stop-out",
+              "target": "Move To Pose-peiaku480",
+              "targetHandle": "move-to-pose-flow-in",
+              "id": "4fT7s7",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Conveyor Control-xqp5xrvtt",
+              "sourceHandle": "conveyor-ctrl-out",
+              "target": "Conveyor Move To Saved Stop-81pc69h1c",
+              "targetHandle": "conveyor-stop-in",
+              "id": "6M7VIz",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move Translate-a8sd0ux37",
+              "sourceHandle": "move-translate-out",
+              "target": "Move To Pose-1882orkxj",
+              "targetHandle": "move-to-pose-flow-in",
+              "id": "lHqlYr",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Control Gripper-zzdp6du3k",
+              "sourceHandle": "control-gripper-out",
+              "target": "Move Translate-a8sd0ux37",
+              "targetHandle": "move-translate-in",
+              "id": "-qnP12",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose-ra6aecwz0",
+              "sourceHandle": "move-to-pose-out",
+              "target": "Control Gripper-zzdp6du3k",
+              "targetHandle": "control-gripper-in",
+              "id": "y2rqe2",
+              "hidden": false
+            },
+            {
+              "type": "default",
+              "animated": false,
+              "style": {
+                "strokeWidth": 3,
+                "stroke": "#4b5563"
+              },
+              "source": "Move To Pose-peiaku480",
+              "sourceHandle": "move-to-pose-out",
+              "target": "Move To Pose-ra6aecwz0",
+              "targetHandle": "move-to-pose-flow-in",
+              "id": "2bi-VC",
+              "hidden": false
+            }
+          ],
+          "programName": "PNP",
+          "viewport": {
+            "x": -15.5,
+            "y": -537,
+            "zoom": 0.5
+          }
+        }
+      }
+    ]
+  },
+  "poseLibrary": {
+    "poses": {
+      "home_pose": [
+        0.6914,
+        0.17415,
+        0.67685,
+        0,
+        1.5707963267948966,
+        -3.141592653589793
+      ],
+      "pick_box": [
+        0.764455,
+        0.174132,
+        0.030816,
+        2.9651754979205105,
+        1.5695349084618933,
+        -0.16816036394401124
+      ],
+      "pallet_place": [
+        -0.670878,
+        0.758294,
+        -0.113278,
+        0,
+        1.5707963267948966,
+        -3.141134446557035
+      ],
+      "box_place": [
+        -0.670734,
+        0.758113,
+        0.145033,
+        0,
+        1.5707963267948966,
+        -3.1411344744040317
+      ],
+      "home_2": [
+        0.6914,
+        0.17415,
+        0.67685,
+        0,
+        1.5707963267948966,
+        -3.141592653589793
+      ],
+      "pick_from_pallet": [
+        0.796735,
+        0.162044,
+        -0.120081,
+        -1.5794342289234944,
+        1.5505952643116885,
+        1.561603883764331
+      ],
+      "pick_from_pallet2": [
+        0.796735,
+        0.162044,
+        -0.120081,
+        -1.5794342289234944,
+        1.5505952643116885,
+        1.561603883764331
+      ],
+      "rack_place": [
+        -0.780031,
+        0.273096,
+        0.826002,
+        -0.8215101332237413,
+        1.568999039708844,
+        2.3195378434221734
+      ],
+      "pick_from_pallet3": [
+        0.796287,
+        0.162052,
+        0.049728,
+        -1.5956252416602457,
+        1.5506385319021199,
+        1.545499194352189
+      ]
+    },
+    "joints": {},
+    "poseRobots": {
+      "home_pose": "UR10e",
+      "pick_box": "UR10e",
+      "pallet_place": "UR10e",
+      "box_place": "UR10e",
+      "home_2": "UR10e_1",
+      "pick_from_pallet": "UR10e_1",
+      "pick_from_pallet2": "UR10e_1",
+      "rack_place": "UR10e_1",
+      "pick_from_pallet3": "UR10e_1"
+    },
+    "jointRobots": {}
+  },
+  "poseFrame": "base_link",
+  "poseRotation": "rpy_zyx",
+  "weldPaths": {},
+  "deburrSurfaces": {},
+  "assets": {}
+}
